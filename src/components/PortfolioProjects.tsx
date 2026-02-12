@@ -131,18 +131,18 @@ export default function PortfolioProjects() {
                 </h2>
             </motion.div>
 
-            <div className="container relative z-10">
-                <div className="text-center mb-32">
+            <div className="container relative z-10 px-4 mx-auto">
+                <div className="text-center mb-16 md:mb-32">
                     <div className="inline-flex items-center justify-center gap-2 mb-6 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                         <span className="uppercase tracking-[0.3em] text-[10px] font-black text-white/70">Selected Works</span>
                     </div>
-                    <h2 className="text-5xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-[0.85] uppercase">
+                    <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-[1] md:leading-[0.85] uppercase">
                         Digital <span className="text-gradient-primary">Ventures</span>
                     </h2>
                 </div>
 
-                <div className="flex flex-col gap-40 max-w-6xl mx-auto">
+                <div className="flex flex-col gap-24 md:gap-40 max-w-6xl mx-auto">
                     {projects.map((project, index) => (
                         <div key={index} className="group relative">
                             <motion.div
@@ -150,10 +150,10 @@ export default function PortfolioProjects() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                                className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+                                className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center"
                             >
                                 {/* Interactive Preview Side */}
-                                <div className={`relative aspect-[16/10] lg:col-span-7 rounded-[3rem] overflow-hidden border border-white/5 group-hover:border-primary/40 transition-all duration-700 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] bg-[#0a0a0a] z-10 index-${index % 2 === 0 ? '0' : '1'}`}>
+                                <div className={`relative aspect-[16/10] lg:col-span-7 rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/5 group-hover:border-primary/40 transition-all duration-700 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] bg-[#0a0a0a] z-10 index-${index % 2 === 0 ? '0' : '1'}`}>
                                     <ProjectPreview url={project.url} title={project.title} color={project.color} />
 
                                     {/* Action Button */}
@@ -161,10 +161,10 @@ export default function PortfolioProjects() {
                                         href={project.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="absolute bottom-10 right-10 z-20 w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-3xl group/btn overflow-hidden"
+                                        className="absolute bottom-6 md:bottom-10 right-6 md:right-10 z-20 w-12 md:w-16 h-12 md:h-16 bg-primary text-white rounded-xl md:rounded-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-3xl group/btn overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform" />
-                                        <ExternalLink className="relative w-7 h-7 group-hover/btn:rotate-12 transition-transform" />
+                                        <ExternalLink className="relative w-5 h-5 md:w-7 md:h-7 group-hover/btn:rotate-12 transition-transform" />
                                     </a>
                                 </div>
 
@@ -176,17 +176,17 @@ export default function PortfolioProjects() {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: 0.2 }}
                                     >
-                                        <div className="flex items-center gap-4 mb-8">
-                                            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary shadow-xl">
+                                        <div className="flex items-center gap-4 mb-6 md:mb-8">
+                                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary shadow-xl">
                                                 {project.icon}
                                             </div>
                                             <div>
-                                                <p className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-1">{project.category}</p>
-                                                <h3 className="text-4xl md:text-5xl font-black text-white leading-none uppercase tracking-tighter">{project.title}</h3>
+                                                <p className="text-primary text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] mb-1">{project.category}</p>
+                                                <h3 className="text-3xl md:text-5xl font-black text-white leading-none uppercase tracking-tighter">{project.title}</h3>
                                             </div>
                                         </div>
 
-                                        <p className="text-gray-400 text-lg md:text-xl mb-10 leading-relaxed font-medium italic">
+                                        <p className="text-gray-400 text-base md:text-xl mb-8 md:mb-10 leading-relaxed font-medium italic">
                                             "{project.description}"
                                         </p>
 

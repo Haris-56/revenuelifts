@@ -28,18 +28,18 @@ const skillCategories = [
 export default function PortfolioSkills() {
     return (
         <section id="skills" className="section-padding bg-[#070707]">
-            <div className="container">
-                <div className="flex flex-col lg:flex-row gap-20 items-start">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                     {/* Left: Heading */}
                     <div className="lg:w-1/3">
                         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white/5">
                             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Technical Edge</span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-black text-white leading-tight uppercase mb-8 tracking-tighter">
+                        <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight uppercase mb-6 md:mb-8 tracking-tighter">
                             Architecting <br />
                             <span className="text-gradient-primary">Modern</span> Solutions.
                         </h2>
-                        <p className="text-gray-400 text-lg leading-relaxed mb-10">
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-10">
                             Equipped with a diverse technical arsenal ranging from low-level systems programming to modern high-performance web frameworks and AI automation.
                         </p>
                         <div className="flex items-center gap-4 text-white/50 text-sm font-bold uppercase tracking-widest">

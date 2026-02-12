@@ -42,18 +42,18 @@ export default function PortfolioContact() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[50%] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container relative z-10 px-4 mx-auto">
-                <div className="max-w-6xl mx-auto glass-panel rounded-[3.5rem] p-8 md:p-16 border-white/10 shadow-3xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div className="max-w-6xl mx-auto glass-panel rounded-[2rem] md:rounded-[3.5rem] p-6 md:p-16 border-white/10 shadow-3xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
 
                         {/* Left Side: Context */}
                         <div>
-                            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5">
+                            <div className="inline-flex items-center gap-2 mb-6 md:mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5">
                                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Let's Connect</span>
                             </div>
-                            <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.9] uppercase mb-10 tracking-tighter">
+                            <h2 className="text-4xl md:text-7xl font-black text-white leading-[1] md:leading-[0.9] uppercase mb-8 md:mb-10 tracking-tighter">
                                 Ready to <br /> <span className="text-gradient-primary">Accelerate</span> <br /> Your Vision?
                             </h2>
-                            <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 max-w-md">
+                            <p className="text-gray-400 text-base md:text-xl leading-relaxed mb-10 md:mb-12 max-w-md">
                                 I am currently available for Full-Stack & Automation roles. Let's discuss how my expertise can drive your results.
                             </p>
 
@@ -79,9 +79,9 @@ export default function PortfolioContact() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-10 backdrop-blur-3xl"
+                                className="bg-white/5 border border-white/10 rounded-[2rem] p-6 md:p-10 backdrop-blur-3xl"
                             >
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-4">Full Name</label>
                                         <div className="relative">
@@ -90,7 +90,7 @@ export default function PortfolioContact() {
                                                 required
                                                 type="text"
                                                 placeholder="Enter your name"
-                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all"
+                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 md:py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all text-sm"
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             />
@@ -105,7 +105,7 @@ export default function PortfolioContact() {
                                                 required
                                                 type="email"
                                                 placeholder="email@example.com"
-                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all"
+                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 md:py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all text-sm"
                                                 value={formData.email}
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             />
@@ -120,7 +120,7 @@ export default function PortfolioContact() {
                                                 required
                                                 rows={4}
                                                 placeholder="Tell me about your project..."
-                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all resize-none"
+                                                className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 md:py-5 pl-14 pr-6 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all resize-none text-sm"
                                                 value={formData.message}
                                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             />
@@ -130,7 +130,7 @@ export default function PortfolioContact() {
                                     <button
                                         type="submit"
                                         disabled={status !== 'idle'}
-                                        className={`btn btn-primary w-full !py-6 group text-sm font-black uppercase tracking-widest flex items-center justify-center gap-3 overflow-hidden relative shadow-2xl ${status !== 'idle' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                        className={`btn btn-primary w-full !py-5 md:!py-6 group text-xs md:text-sm font-black uppercase tracking-widest flex items-center justify-center gap-3 overflow-hidden relative shadow-2xl ${status !== 'idle' ? 'opacity-70 cursor-not-allowed' : ''}`}
                                     >
                                         {status === 'idle' && (
                                             <>Dispatch Message <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
