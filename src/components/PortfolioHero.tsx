@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Download, Github, Linkedin, Mail, Code2, Cpu, Rocket, Terminal } from 'lucide-react';
 import Link from 'next/link';
 
-function SocialIcon({ icon, href, label }: { icon: React.ReactNode, href: string, label: string }) {
+function SocialIcon({ icon, href, label, className }: { icon: React.ReactNode, href: string, label: string, className?: string }) {
     return (
         <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors group"
+            className={`flex items-center gap-2 text-gray-500 hover:text-primary transition-colors group ${className || ''}`}
         >
             <span className="w-5 h-5 group-hover:scale-110 transition-transform">{icon}</span>
             <span className="text-xs font-black uppercase tracking-widest hidden sm:block">{label}</span>
@@ -98,10 +98,14 @@ export default function PortfolioHero() {
                                 </span>
                             </Link>
 
-                            <button className="group flex items-center justify-center gap-4 px-8 md:px-10 py-4 md:py-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all active:scale-95">
+                            <a
+                                href="/Haris CV 2026.pdf"
+                                download
+                                className="group flex items-center justify-center gap-4 px-8 md:px-10 py-4 md:py-5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all active:scale-95"
+                            >
                                 <Download className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                                 <span className="text-white text-sm md:text-base font-black uppercase tracking-widest">Download CV</span>
-                            </button>
+                            </a>
                         </motion.div>
 
                         <motion.div
@@ -112,7 +116,7 @@ export default function PortfolioHero() {
                         >
                             <SocialIcon icon={<Github />} href="https://github.com/Haris-56" label="GitHub" />
                             <SocialIcon icon={<Linkedin />} href="https://www.linkedin.com/in/haris-web" label="LinkedIn" />
-                            <SocialIcon icon={<Mail />} href="mailto:haris.bin.ahson@gmail.com" label="Email" />
+                            <SocialIcon icon={<Mail />} href="mailto:haris.bin.ahson@gmail.com" label="Email" className="break-all" />
                         </motion.div>
                     </div>
 

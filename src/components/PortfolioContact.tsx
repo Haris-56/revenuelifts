@@ -160,13 +160,18 @@ export default function PortfolioContact() {
 
 function ContactCard({ icon, title, value, href }: { icon: React.ReactNode, title: string, value: string, href: string }) {
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 p-6 rounded-[2.5rem] bg-white/5 border border-white/5 hover:border-primary/30 transition-all group">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-xl">
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-6 p-6 rounded-[2rem] border border-white/5 bg-white/5 hover:bg-white/10 hover:border-primary/20 transition-all group"
+        >
+            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 {icon}
             </div>
-            <div>
-                <p className="text-gray-500 text-[9px] font-black uppercase tracking-widest mb-1">{title}</p>
-                <p className="text-white font-bold text-lg group-hover:text-primary transition-colors">{value}</p>
+            <div className="min-w-0 flex-1">
+                <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1">{title}</p>
+                <p className="text-white font-bold text-base md:text-lg group-hover:text-primary transition-colors break-all leading-tight">{value}</p>
             </div>
         </a>
     );
