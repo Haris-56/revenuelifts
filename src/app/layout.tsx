@@ -15,12 +15,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Web Design (Figma, Wordpress & Next.js) & SEO | Portfolio",
-  description: "Expert web design and SEO services specializing in Figma, Wordpress, and Next.js. Production-ready, aesthetic websites that rank.",
-  keywords: ["Web Design", "Figma", "Wordpress", "Next.js", "SEO", "Portfolio", "Revenuelifts"],
+  title: "Haris | Full Stack Next.js Developer Portfolio",
+  description: "Portfolio of Muhammad Haris Bin Ahson, a Full Stack Developer specializing in Next.js, automation, and premium web experiences with ~4 years of experience.",
+  keywords: ["Muhammad Haris", "Haris", "Full Stack Developer", "Next.js Developer", "Portfolio", "Automation Engineer"],
   openGraph: {
-    title: "Web Design (Figma, Wordpress & Next.js) & SEO | Portfolio",
-    description: "Expert web design and SEO services specializing in Figma, Wordpress, and Next.js.",
+    title: "Haris | Full Stack Next.js Developer Portfolio",
+    description: "Full Stack Developer specializing in Next.js, automation, and premium web experiences.",
     type: "website",
   }
 };

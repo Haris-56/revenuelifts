@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-transparent">
+        <section className="relative min-h-screen flex items-center justify-center pt-40 md:pt-48 overflow-hidden bg-transparent">
 
             <div className="container relative z-10 px-4 mx-auto text-center">
                 {/* Badge */}

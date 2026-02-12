@@ -1,44 +1,39 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+function SocialIcon({ icon, href }: { icon: React.ReactNode, href: string }) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-primary transition-colors duration-300"
+        >
+            {icon}
+        </a>
+    );
+}
+
 const navLinks = [
-    { name: 'Services', href: '/#services' },
-    { name: 'Work', href: '/#work' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Process', href: '/#process' },
-    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Projects', href: '/home#projects' },
+    { name: 'Skills', href: '/home#skills' },
+    { name: 'Experience', href: '/home#experience' },
+    { name: 'Contact', href: '/home#contact' },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'
-                }`}
-        >
+        <header className="fixed top-0 left-0 right-0 z-[100] py-4">
             <div className="container px-4 mx-auto">
-                <nav
-                    className={`flex items-center justify-between transition-all duration-500 rounded-[2rem] px-6 md:px-10 py-4 ${scrolled
-                            ? 'glass-panel mx-auto max-w-5xl shadow-2xl'
-                            : 'bg-transparent border-transparent'
-                        }`}
-                >
-                    <Link href="/" className="text-2xl font-black font-outfit text-white tracking-tighter hover:scale-105 transition-transform duration-300">
-                        <span className="text-primary">REVENUE</span>LIFTS
+                <nav className="flex items-center justify-between transition-all duration-500 rounded-[2rem] px-6 md:px-10 py-4 glass-panel mx-auto max-w-5xl shadow-2xl">
+                    <Link href="/home" className="text-2xl font-black font-outfit text-white tracking-tighter hover:scale-105 transition-transform duration-300">
+                        <span className="text-gradient-primary uppercase">Haris</span>
                     </Link>
 
                     {/* Desktop Menu */}
@@ -56,9 +51,14 @@ export default function Navbar() {
                         ))}
                     </ul>
 
-                    <div className="hidden md:block">
+                    <div className="hidden md:flex items-center gap-6">
+                        <div className="flex items-center gap-4 mr-4 border-r border-white/10 pr-6">
+                            <SocialIcon icon={<Github className="w-4 h-4" />} href="https://github.com/Haris-56" />
+                            <SocialIcon icon={<Linkedin className="w-4 h-4" />} href="https://www.linkedin.com/in/haris-web" />
+                            <SocialIcon icon={<Instagram className="w-4 h-4" />} href="https://www.instagram.com/revenuelifts/" />
+                        </div>
                         <Link href="#contact" className="btn btn-primary !py-3 !px-8 text-sm font-black uppercase tracking-widest">
-                            Let's Talk
+                            Hire Me
                         </Link>
                     </div>
 

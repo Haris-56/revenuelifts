@@ -1,5 +1,6 @@
+'use client';
 import Link from 'next/link';
-import { Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -10,46 +11,47 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
                     <div className="max-w-xl">
                         <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
-                            Let's Work <br /> <span className="text-primary">Together!</span>
+                            Let's Build <br /> <span className="text-primary text-gradient-primary">Together.</span>
                         </h2>
                         <p className="text-gray-400 text-xl max-w-md">
-                            Ready to elevate your digital presence? We are available for new projects.
+                            Open for Full-Stack / Next.js opportunities and interesting freelance collaborations.
                         </p>
-                        <button className="mt-10 btn btn-primary px-10 py-5 text-lg rounded-full">
-                            Start a Project
-                        </button>
                     </div>
 
-                    <div className="flex flex-col gap-10 text-right">
+                    <div className="flex flex-col gap-10 text-right w-full md:w-auto">
                         <div className="space-y-4">
-                            <h4 className="text-gray-500 uppercase tracking-widest text-sm">Contact</h4>
-                            <a href="mailto:hello@revenuelifts.com" className="text-2xl font-bold hover:text-primary transition-colors block">
-                                hello@revenuelifts.com
+                            <h4 className="text-gray-500 uppercase tracking-widest text-sm">Inquiries</h4>
+                            <a href="mailto:haris.bin.ahson@gmail.com" className="text-2xl md:text-3xl font-black hover:text-primary transition-colors block uppercase tracking-tighter">
+                                haris.bin.ahson@gmail.com
                             </a>
-                            <p className="text-2xl font-bold">+1 (555) 000-0000</p>
                         </div>
 
                         <div className="space-y-4">
-                            <h4 className="text-gray-500 uppercase tracking-widest text-sm">Socials</h4>
+                            <h4 className="text-gray-500 uppercase tracking-widest text-sm">Social Presence</h4>
                             <div className="flex gap-4 justify-end">
-                                {[Instagram, Linkedin, Twitter].map((Icon, i) => (
-                                    <a key={i} href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                                        <Icon className="w-5 h-5" />
-                                    </a>
-                                ))}
+                                <SocialLink icon={<Github className="w-5 h-5" />} href="https://github.com/Haris-56" />
+                                <SocialLink icon={<Linkedin className="w-5 h-5" />} href="https://www.linkedin.com/in/haris-web" />
+                                <SocialLink icon={<Instagram className="w-5 h-5" />} href="https://www.instagram.com/revenuelifts/" />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 text-gray-500 text-sm">
-                    <p>&copy; 2024 RevenueLifts. All rights reserved.</p>
+                <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 text-gray-500 text-sm font-bold uppercase tracking-widest">
+                    <p>&copy; {new Date().getFullYear()} Haris Bin Ahson. All rights reserved.</p>
                     <div className="flex gap-8 mt-4 md:mt-0">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <span>Based in Faisalabad, PK</span>
                     </div>
                 </div>
             </div>
         </footer>
+    );
+}
+
+function SocialLink({ icon, href }: { icon: React.ReactNode, href: string }) {
+    return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+            {icon}
+        </a>
     );
 }
