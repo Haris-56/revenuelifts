@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Code2, Cpu, Globe2, Layers, Layout, MessageSquare, Terminal, Wrench } from 'lucide-react';
+import Tilt3D from '@/components/Tilt3D';
 
 const skillCategories = [
     {
@@ -31,7 +32,7 @@ export default function PortfolioSkills() {
             <div className="container px-4 mx-auto">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                     {/* Left: Heading */}
-                    <div className="lg:w-1/3">
+                    <div className="lg:w-1/3" data-gsap="reveal">
                         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white/5">
                             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Technical Edge</span>
                         </div>
@@ -51,13 +52,13 @@ export default function PortfolioSkills() {
                     {/* Right: Skills Grid */}
                     <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                         {skillCategories.map((cat, index) => (
+                            <Tilt3D key={index} max={12} className="h-full">
                             <motion.div
-                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="p-8 rounded-[2rem] border border-white/5 bg-[#0a0a0a] hover:border-primary/20 transition-colors group"
+                                className="p-8 h-full rounded-[2rem] border border-white/5 bg-[#0a0a0a] hover:border-primary/20 transition-colors group"
                             >
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -76,6 +77,7 @@ export default function PortfolioSkills() {
                                     ))}
                                 </div>
                             </motion.div>
+                            </Tilt3D>
                         ))}
                     </div>
                 </div>

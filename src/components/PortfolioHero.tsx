@@ -2,6 +2,9 @@
 import { motion } from 'framer-motion';
 import { ChevronRight, Download, Github, Linkedin, Mail, Code2, Cpu, Rocket, Terminal } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const HeroObject = dynamic(() => import('@/components/three/HeroObject'), { ssr: false });
 
 function SocialIcon({ icon, href, label, className }: { icon: React.ReactNode, href: string, label: string, className?: string }) {
     return (
@@ -122,6 +125,10 @@ export default function PortfolioHero() {
 
                     {/* Right: Integrated Profile Image */}
                     <div className="lg:col-span-4 relative order-1 lg:order-2 flex justify-center lg:justify-end mb-12 lg:mb-0">
+                        {/* Interactive 3D object behind the portrait */}
+                        <div className="absolute -inset-x-16 -inset-y-20 z-0 pointer-events-none">
+                            <HeroObject />
+                        </div>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}

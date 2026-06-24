@@ -9,7 +9,7 @@ export default function Footer() {
 
             <div className="container relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
-                    <div className="max-w-xl">
+                    <div className="max-w-xl" data-gsap="reveal">
                         <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
                             Let's Build <br /> <span className="text-primary text-gradient-primary">Together.</span>
                         </h2>

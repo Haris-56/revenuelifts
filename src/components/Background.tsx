@@ -1,6 +1,9 @@
 'use client';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { useRef, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+const SceneBackground = dynamic(() => import('@/components/three/SceneBackground'), { ssr: false });
 
 export default function Background() {
     const ref = useRef(null);
@@ -52,17 +55,20 @@ export default function Background() {
 
     return (
         <div ref={ref} className="fixed inset-0 z-[-1] overflow-hidden bg-[#030303]">
+            {/* Layer 0: Live Three.js 3D Scene */}
+            <SceneBackground />
+
             {/* Layer 1: PROPER STRUCTURAL GRID (Visible & Parallax) */}
             <motion.div
                 style={{ y: gridY }}
-                className="absolute inset-[-100px] z-0 pointer-events-none"
+                className="absolute inset-[-100px] z-[1] pointer-events-none"
             >
                 <div
                     className="absolute inset-0"
                     style={{
                         backgroundImage: `
-                            linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px)
+                            linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)
                         `,
                         backgroundSize: '60px 60px',
                     }}
@@ -70,7 +76,7 @@ export default function Background() {
             </motion.div>
 
             {/* Layer 2: Texture & Starfield */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute inset-0 z-[2] pointer-events-none">
                 {[...Array(80)].map((_, i) => (
                     <div
                         key={`dot-${i}`}

@@ -9,7 +9,7 @@ export default function PortfolioExperience() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
                     {/* Education Section */}
                     <div>
-                        <div className="flex items-center gap-4 mb-10 md:mb-12">
+                        <div className="flex items-center gap-4 mb-10 md:mb-12" data-gsap="reveal">
                             <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                                 <GraduationCap className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
@@ -32,7 +32,7 @@ export default function PortfolioExperience() {
 
                     {/* Professional & Skills Section */}
                     <div>
-                        <div className="flex items-center gap-4 mb-10 md:mb-12">
+                        <div className="flex items-center gap-4 mb-10 md:mb-12" data-gsap="reveal">
                             <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center text-primary">
                                 <Award className="w-6 h-6 md:w-8 md:h-8" />
                             </div>

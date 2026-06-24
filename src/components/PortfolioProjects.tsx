@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ExternalLink, ArrowRight, Bot, ShoppingBag, Search, Globe, Layout } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
+import Tilt3D from '@/components/Tilt3D';
 
 const projects = [
     {
@@ -153,7 +154,7 @@ export default function PortfolioProjects() {
                                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center"
                             >
                                 {/* Interactive Preview Side */}
-                                <div className={`relative aspect-[16/10] lg:col-span-7 rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/5 group-hover:border-primary/40 transition-all duration-700 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] bg-[#0a0a0a] z-10 index-${index % 2 === 0 ? '0' : '1'}`}>
+                                <Tilt3D max={8} className={`relative aspect-[16/10] lg:col-span-7 rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/5 group-hover:border-primary/40 duration-700 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] bg-[#0a0a0a] z-10 index-${index % 2 === 0 ? '0' : '1'}`}>
                                     <ProjectPreview url={project.url} title={project.title} color={project.color} />
 
                                     {/* Action Button */}
@@ -162,11 +163,12 @@ export default function PortfolioProjects() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="absolute bottom-6 md:bottom-10 right-6 md:right-10 z-20 w-12 md:w-16 h-12 md:h-16 bg-primary text-white rounded-xl md:rounded-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-3xl group/btn overflow-hidden"
+                                        style={{ transform: 'translateZ(40px)' }}
                                     >
                                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform" />
                                         <ExternalLink className="relative w-5 h-5 md:w-7 md:h-7 group-hover/btn:rotate-12 transition-transform" />
                                     </a>
-                                </div>
+                                </Tilt3D>
 
                                 {/* Content Side */}
                                 <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-first' : ''}`}>
